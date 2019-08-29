@@ -4,7 +4,7 @@ let canvas = document.getElementById("tela")
 let ctx = canvas.getContext("2d")
 
 // variáveis
-let x = 200, y = 100, larg =50, alt = 10, ang = 0
+let x = 700, y = 350, larg = 30, alt = 50, ang = 0
 
 // inicia um vetor de 256 teclas
 let teclas = []
@@ -32,33 +32,18 @@ document.onkeydown = (evt) => { teclas[evt.keyCode] = true }
 
 document.onkeyup = (evt) => { teclas[evt.keyCode] = false }
 
-// movimentação
 function processaTeclas(){
-    // Primeiro objeto
-    if (teclas[87]) { // W  cima
-        x += 5 * 0.1
-        y += 5 * 0.1
-
-        console.log(" ^ ", y)
-    } else if (teclas[83]) { // S baixo
+    // Movimentação do carro
+    if (teclas[38]) { // cima - frente
+        y -= Math.cos(ang) * 5
+        x += Math.sin(ang) * 5
+    }  if (teclas[40]) { // baixo - trás
         y += 5
-        console.log(" v ", y)
-    } else if (teclas[68]) { // D direita
-        //x += Math.cos(Math.PI /3)
+    }  if (teclas[39]) { // direita
         ang += 0.1
-        console.log(" > ", x)
-    } else if (teclas[65] ) { // A esquerda
+    }  if (teclas[37] ) { // esquerda
         ang -= 0.1
-        console.log(" < ", x)
     }
-    // } else if (teclas[69]) { // E gira horario
-    //     ang += 0.1
-    //     console.log(" horario ", ang)
-    // } else if (teclas[81]) { // Q gira horario
-    //     ang -= 0.1
-    //     console.log(" anti-horario ", ang)
-    // }
-
 }
 
 requestAnimationFrame(desenhar)
