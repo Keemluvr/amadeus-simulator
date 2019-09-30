@@ -15,6 +15,11 @@ body {
     max-height: 200px;
 }
 
+.danger {
+    background-color: #E22322;
+
+}
+
 .butt {
     width: 100%;
 }
