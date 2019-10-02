@@ -12,115 +12,50 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 p-0 mx-auto">
-                <h1 class="text-center mt-3 mb-5">Amadeus Simulator</h1>
-            </div>
-        </div>
-    </div>
+    <nav class="navbar navbar-light bg-light d-flex justify-content-center">
+        <span class="navbar-brand mb-0 text-uppercase font-weight-bolder">Amadeus Simulator</span>
+    </nav>
 
-    <div class="container ml-0 mr-0 mx-auto">
-        <div class="row">
-            <!-- Controles -->
-            <div class="row col-6 p-0">
-                <p class="col-12">Controles:</p>
-                <div class="row col-6 m-0 p-0 mb-3">
+    <div class="container ml-0 mr-0 mt-5 mx-auto">
+        <div class="row d-flex justify-content-center">
 
-                    <div class="col-12 p-0 pl-2">
-                        <p class="text-center mb-0">Avançar</p>
-                        <div class="butt d-flex justify-content-center">
-                            <button class="btn button"
-                                onclick="x += Math.sin(ang) * velocidade; y -= Math.cos(ang) * velocidade;">W</button>
-                        </div>
-                    </div>
-                    <div class="col-6 pr-0">
-                        <p class="text-center mb-0">Esquerda</p>
-                        <div class="butt d-flex justify-content-center">
-                            <button class="btn button" onclick="ang -= 0.01">A</button>
-                        </div>
-                    </div>
-                    <div class="col-6 p-0">
-                        <p class="text-center mb-0">Direita</p>
-                        <div class="butt d-flex justify-content-center">
-                            <button class="btn button" onclick="ang += 0.01">D</button>
-                        </div>
-                    </div>
-                    <div class="col-12 p-0 pl-2">
-                        <p class="text-center mb-0">Voltar</p>
-                        <div class="butt d-flex justify-content-center">
-                            <button class="btn button"
-                                onclick="x -= Math.sin(ang) * velocidade; y += Math.cos(ang) * velocidade;">S</button>
-                        </div>
-                    </div>
-                    <div class="row container col-12">
-                        <label class="col-12">Zoom</label>
-                        <div class="row col-12 d-flex justify-content-center">
-                            <button type="button" class="col-5 btn button mr-2"
-                                onclick="if (escalaX <= 5) { escalaX += 0.01; escalaY += 0.01; }">Aproximar</button>
-                            <button type="button" class="col-5 btn button danger"
-                                onclick="if (escalaX > 1) { escalaX -= 0.01; escalaY -= 0.01; }">Distanciar</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Botões -->
-                <div class="col-6">
-                    <div class="mb-2">
-                        <label class="">Escada</label>
-                        <div class="row">
-                            <button type="button" class="col-5 btn button mr-2 p-0"
-                                onclick="addEscada = true; velocidade = 10;">Colocar</button>
-                            <button type="button" class="col-5 btn button danger"
-                                onclick="addEscada = false; velocidade = 4;">Tirar</button>
-                        </div>
-                    </div>
-                    <div class="mb-2">
-                        <label class="">Farol</label>
-                        <div class="row">
-                            <button type="button" class="col-5 btn button mr-2"
-                                onclick="ligarFarol = true">Ligar</button>
-                            <button type="button" class="col-5 btn button danger"
-                                onclick="ligarFarol = false">Desligar</button>
-                        </div>
-                    </div>
-                    <div class="mb-2">
-                        <label class="">Rádio</label>
-                        <div class="row">
-                            <button type="button" class="col-5 btn button mr-2"
-                                onclick="document.getElementById('radio').play()">Ligar</button>
-                            <button type="button" class="col-5 btn button danger"
-                                onclick="document.getElementById('radio').pause()">Pausar</button>
-                        </div>
-                    </div>
-                    <audio id="radio" preload>
-                        <source src="Tokyo Drift.mp3" type="audio/mpeg">
-                        Seu navegador não suporta áudio em HTML5, atualize-o.
-                    </audio>
-
-                </div>
-            </div>
             <!-- Atalhos -->
-            <div class="row col-6 p-0 mx-auto">
+            <div class="row col-lg-2 col-12 text-center text-lg-left">
                 <p class="col-12">Atalhos:</p>
-                <div class="col-4">
+                <div class="col-lg-12 col-6">
                     <p><strong>W</strong> - Avançar</p>
                     <p><strong>A</strong> - Esquerda</p>
+                </div>
+                <div class="col-lg-12 col-6">
                     <p><strong>D</strong> - Direita</p>
                     <p><strong>S</strong> - Voltar</p>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-12 col-6">
                     <p><strong>E</strong> - Escada</p>
                     <p><strong>F</strong> - Farois</p>
-                    <p><strong>R</strong> - Radio</p>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-12 col-6">
+                    <p><strong>R</strong> - Radio</p>
                     <p><strong>O</strong> - Aproximar</p>
+                </div>
+                <div class="col-lg-12 col-6">
                     <p><strong>P</strong> - Distanciar</p>
                 </div>
             </div>
-            <div id="canvas" class="col-12 p-0">
+            <!-- end atalhos -->
+
+            <!-- radio -->
+            <audio id="radio" preload>
+                <source src="Tokyo Drift.mp3" type="audio/mpeg">
+                Seu navegador não suporta áudio em HTML5, atualize-o.
+            </audio>
+            <!-- end radio -->
+            
+            <!-- canvas -->
+            <div id="canvas" class="col-10">
                 <canvas id="tela" width="1500" height="700"></canvas>
             </div>
+            <!-- end canvas -->
         </div>
     </div>
 

@@ -1,5 +1,16 @@
 body {
-    background-color: #EFEFEF;
+    background-color: #EEF1EC;
+}
+
+.navbar {
+    background-color: #FFFFFF !important;
+    height: 10vh;
+    
+}
+
+.navbar-light .navbar-brand{
+    color: #4A5058 !important;
+    font-size: 25px;
 }
 
 #tela {
