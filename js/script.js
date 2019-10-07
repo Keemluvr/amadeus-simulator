@@ -513,7 +513,7 @@ document.addEventListener('keydown', (event) => {
             velocidade = 4
         } else {
             addEscada = true
-            velocidade = 10
+            velocidade = 20
         }
 
     }
